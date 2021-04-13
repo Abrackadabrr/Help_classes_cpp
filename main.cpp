@@ -27,6 +27,7 @@ int main() {
     coords.resize(5, 2);
     VectorN<int, 5> vector5(coords);
     cout << vector5 << endl;
-// тут нужно посмотреть, чтобы выдавало ошибку при сравнении векторов
+    bool t = (vector2 == vector3);
+    cout << t << endl;
     return 0;
 }
