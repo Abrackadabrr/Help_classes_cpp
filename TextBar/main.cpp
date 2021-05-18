@@ -8,8 +8,8 @@ int main() {
     textboxTexture.loadFromFile("../text_field.png");
     sf::Font f;
     f.loadFromFile("../18341.ttf");
-    TextBar txt_field_one(400,250, 242, 68,textboxTexture, f, 0, 12);
-    TextBar txt_field_two(400,650, 242, 68,textboxTexture, f, 0, 12);
+    TextBar txt_field_one(400,250, 242, 68,textboxTexture, f, "23", 12);
+    TextBar txt_field_two(400,650, 242, 68,textboxTexture, f, "345", 12);
     //----------//
 
     sf::RenderWindow window(sf::VideoMode(800, 950), "Set properties");
