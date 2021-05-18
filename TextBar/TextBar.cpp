@@ -26,7 +26,7 @@ bool ShapeOfBbox::is_in(int x_, int y_) const
     return false;
 }
 
-TextBar::TextBar(int x, int y, int length, int width, const sf::Texture& texture, const sf::Font& font, double initial_data, int max_size_of_text): Shape(x, y, length, width)
+TextBar::TextBar(int x, int y, int length, int width, const sf::Texture& texture, const sf::Font& font, std::string initial_data, int max_size_of_text): Shape(x, y, length, width)
 {
     this->max_size_of_text = max_size_of_text;
     box.setTexture(texture);
@@ -36,7 +36,7 @@ TextBar::TextBar(int x, int y, int length, int width, const sf::Texture& texture
     active = false;
 
     this->font = font;
-    s = std::to_string(initial_data);
+    s = initial_data;
     b_size = s.getSize();
     txt.setString(s);
     txt.setFont(font);
@@ -112,4 +112,8 @@ void TextBar::displayBox(sf::RenderWindow& window) const
 void TextBar::setText(std::string& str)
 {
     str = txt.getString();
+}
+
+std::string TextBar::returnText() {
+    return this->s;
 }

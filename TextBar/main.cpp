@@ -1,5 +1,5 @@
 #include "TextBar.h"
-
+#include <iostream>
 
 int main() {
 
@@ -34,5 +34,8 @@ int main() {
 
         window.display();
     }
+
+    std::cout << txt_field_one.returnText() << std::endl;
+
     return 0;
 }
