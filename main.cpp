@@ -19,15 +19,15 @@ int main() {
 
     auto vector4 =  vector1 + vector3;
     cout << vector4 << endl;
-    vector4 =  vector1 * 3;
+    vector4 =  2 * vector1 * 3;
     cout << vector4 << endl;
     cout << (vector4 == vector3) << endl;
 
     coords.resize(0, 1);
     coords.resize(5, 2);
     VectorN<int, 5> vector5(coords);
-    cout << vector5 << endl;
-    bool t = (vector2 == vector3);
-    cout << t << endl;
+
+    //cin >> vector5;
+
     return 0;
 }

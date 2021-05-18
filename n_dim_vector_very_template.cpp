@@ -23,7 +23,9 @@ public:
     VectorN<type, dimension> operator + (const VectorN<type, dimension>& vectorN);
     VectorN<type, dimension> operator * (int k);
 
-    friend VectorN<type, dimension> operator *(int k, const VectorN<type, dimension>& vectorN);
+    template<typename typ, unsigned int dimensio>
+    friend VectorN<typ, dimensio> operator *(int k, const VectorN<typ, dimensio>& vectorN);
+    friend istream &operator >> (istream &in, VectorN<type, dimension> &vectorN);
 };
 
 template<typename type, unsigned int dimension>
@@ -87,6 +89,12 @@ VectorN<type, dimension> operator *(int k, const VectorN<type, dimension>& vecto
     for (unsigned int i = 0; i < dimension; i++)
         sum_coords.push_back(vectorN.coords[i]*k);
     return VectorN<type, dimension>(sum_coords);
+}
+
+
+template<typename type, unsigned int dimension>
+istream &operator >> (istream &in, VectorN<type, dimension> &vectorN) {
+    return in;
 }
 
 // example: {4, (5, 5, 5, 5)}
